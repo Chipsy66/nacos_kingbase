@@ -39,6 +39,7 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -123,6 +124,9 @@ public class ExternalDataSourceServiceImpl implements DataSourceService {
                 PersistenceExecutor.scheduleTask(new SelectMasterTask(), 10, 10, TimeUnit.SECONDS);
             }
             PersistenceExecutor.scheduleTask(new CheckDbHealthTask(), 10, 10, TimeUnit.SECONDS);
+        }
+        if(Objects.isNull(jt.getDataSource())){
+            jt.setDataSource(dataSourceList.get(0));
         }
     }
     
