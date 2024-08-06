@@ -34,6 +34,10 @@
             <artifactId>nacos-common</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>cn.com.kingbase</groupId>
+            <artifactId>kingbase8</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
